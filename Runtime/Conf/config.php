@@ -2,7 +2,7 @@
 return array (
   'db_type' => 'mysql',
   'db_host' => '127.0.0.1',
-  'db_name' => 'feifeI',
+  'db_name' => 'feifei',
   'db_user' => 'root',
   'db_pwd' => '',
   'db_port' => '3306',
