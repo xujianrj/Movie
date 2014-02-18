@@ -1,0 +1,113 @@
+<div id="header">
+  <div id="navbar">
+    <div class="layout fn-clear">
+      <ul id="nav" class="ui-nav">
+        <li  class="nav-item  current" class="nav-item " id="nav-home">
+        <a class="nav-link" target="_self" href="{$root}"><i class="ui-icon home-nav"></i></a>
+        </li>
+        <li style="display: none;"  class="nav-item drop-down " id="nav-tv"> <a class="nav-link drop-title" target="_self" href="{:getlistname(2,'list_url')}"> <i class="ui-icon tv-nav"></i>电视剧</a>
+
+        <li  class="nav-item drop-down " id="nav-movie"><a class="nav-link drop-title" target="_self" href="{:getlistname(1,'list_url')}">
+          <i class="ui-icon movie-nav"></i>电影</a>
+        <li  class="nav-item" id="nav-cartoon"><a class="nav-link" target="_self" href="{:getlistname(3,'list_url')}">
+          <i class="ui-icon cartoon-nav"></i>动漫</a></li>
+        <li  style="display: none;" class="nav-item" id="nav-fun"><a class="nav-link" target="_self" href="{:getlistname(4,'list_url')}">
+            <i class="ui-icon fun-nav"></i>综艺</a></li>
+        <li style="display: none;" class="nav-item drop-down " id="nav-wei"><a class="nav-link drop-title" target="_self" href="{:getlistname(35,'list_url')}">
+            <i class="ui-icon wei-nav"></i>微电影</a>
+        <li class="nav-item" id="nav-live"><a class="nav-link" target="_self" href="{:ff_mytpl_url('my_live.html')}"><i class="ui-icon live-nav"></i>直播</a></li>
+        <li class="nav-item " id="nav-koushui"><a class="nav-link" target="_self" href="{:ff_mytpl_url('my_koushui.html')}"><i class="ui-icon ks-nav"></i>口水</a></li>
+        <li style="display: none;" class="nav-item" id="nav-shop"><a class="nav-link" target="_self" href="{$url_special}"><i class="ui-icon shop-nav"></i>专题</a></li>
+      </ul>
+      <!-- // nav end -->
+      <ul id="sign" class="ui-nav" >
+        <li class="nav-item drop-down" id="loginbarx" style="display: none;">
+            <a class="nav-link drop-title" id="innermsg" href="/user-Login"><i class="ui-icon sign-nav"></i></a>
+          <div class="drop-box" id="nav-signin">
+        <li class="nav-item drop-down" id="nav-looked"><a class="nav-link drop-title" target="_self"><i class="ui-icon looked-nav"></i>播放记录 </a>
+          <div class="drop-box">
+            <div class="looked-list">
+              <p><a class="close-his" target="_self" href="javascript:;">关闭</a><a href="javascript:void(0);" id="emptybt"  target="_self" onclick="javascript:_GC()">清空全部播放记录</a></p>
+              <ul class="highlight" id="playhistory">
+              </ul>
+              <div class="his-todo" id="morelog" style="display:none;"></div>
+              <div class="his-todo" id="his-todo"><a target="_blank" class="show-login-dialog" href="/user/index.php">登录</a>后将能永久保存播放记录<em>|</em><a target="_blank"  href="/user/index.php">免费注册</a></div>
+            </div>
+            <script type="text/javascript">PlayHistoryObj.viewPlayHistory('playhistory');</script>
+            <!-- // looked-list end -->
+          </div>
+        </li>
+      </ul>
+      <!-- // sign end -->
+    </div>
+  </div>
+  <!-- // navbar end -->
+  <div id="subnav">
+    <div class="layout fn-clear">
+      <div class="subnav-tv fn-left" style="display: none;"><strong class="tv">电视剧：</strong>
+        <volist name="list_menu" id="ppvod">
+          <in name="ppvod.list_id" value="2">
+            <volist name="ppvod.son" id="ppvodson"> <a href="{$ppvodson.list_url}">{$ppvodson.list_name|msubstr=0,2}</a><em>|</em> </volist>
+          </in>
+        </volist>
+      </div>
+      <div class="subnav-movie fn-left"><strong class="movie">电影：</strong>
+        <volist name="list_menu" id="ppvod">
+          <in name="ppvod.list_id" value="1">
+            <volist name="ppvod.son" id="ppvodson"> <a href="{$ppvodson.list_url}">{$ppvodson.list_name|msubstr=0,3}</a><em>|</em> </volist>
+          </in>
+        </volist>
+      </div>
+    </div>
+  </div>
+  <!-- // subnav end -->
+  <div id="headbar">
+    <div class="layout fn-clear">
+      <div id="logo"><a href="http://www.yayamov.com"><img src="{$tpl}/static/images/logo.png" alt="丫丫电影网http://www.yayamov.com" /></a></div>
+      <!-- // logo end -->
+      <div id="searchbar">
+        <div class="ui-search">
+          <form id="ffsearch" name="ffsearch" method="POST" action="{$root}index.php?s=vod-search" onSubmit="return qrsearch();">
+            <input type="text" id="wd" name="wd" class="search-input" value="请在此处输入影片片名或演员名称。" onfocus="if(this.value=='请在此处输入影片片名或演员名称。'){this.value='';}" onblur="if(this.value==''){this.value='请在此处输入影片片名或演员名称。';};"/>
+            <input type="submit"   class="search-button" value="" />
+          </form>
+        </div>
+        <!-- // search end -->
+        <!--模板仿制、修改，QQ：182377860  模板支持网站：www.yayamov.com-->
+        <div class="hotkeys"> {$hotkey} </div>
+        <!-- // hotkeys end -->
+      </div>
+      <!-- // searchbar end -->
+      <ul id="qire-plus">
+        <li><a id="new" href="{:ff_mytpl_url('my_new.html')}"><i class="ui-icon new-icon"></i>最近<br />
+          更新</a></li>
+        <li><a href="{:ff_mytpl_url('my_top.html')}"><i class="ui-icon top-icon"></i>影片<br />
+          排行</a></li>
+        <li><a href="/baiduplayer/F.html"><i class="ui-icon help-icon"></i>会员<br />
+          帮助</a></li>
+        <li><a href="{$url_guestbook}"><i class="ui-icon gb-icon"></i>留言<br />
+          反馈</a></li>
+        <li><a target="_self" id="a-clo" href="javascript:void(0);" onclick='fav();'><i class="ui-icon fav-icon"></i>收藏<br />
+          本站</a></li>
+      </ul>
+      <!-- qire-plus end -->
+      <a class="show-login-dialog fn-hide" href="/user/index.php" >登录</a>
+      <script type="text/javascript">
+				function fav(){
+					URL='http://www.yayamov.com';title='yaya电影网';
+					try{ 
+						window.external.addFavorite(URL, title);  
+					}catch (e){ 
+						try {
+							window.sidebar.addPanel(title, URL, ""); 
+						}catch (e){ 
+							alert("加入收藏失败，请使用Ctrl+D进行添加");
+						}
+				}	}
+			</script>
+    </div>
+    <!-- // layout end -->
+  </div>
+  <!-- // headbar end -->
+</div>
+<!-- // header end -->

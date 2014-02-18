@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>最新{$list_name}-{$list_dir}{$list_name_big}{$list_name}-2011最新{$list_name}{$list_title}</title>
+<meta name="keywords" content="<notempty name="list_keywords">{$list_keywords}<else/>最新{$list_name},{$keywords}</notempty>">
+<meta name="description" content="最新{$list_name}包含的影片有<volist name='vod_list' id='ppvod'>{$ppvod.vod_name|msubstr=0,10},</volist>完全免费在线观看！">
+<!--模板仿制、修改，QQ：182377860  模板支持网站：www.yayamov.com-->
+<link href="{$tpl}/static/css/base.css" type="text/css" rel="stylesheet" />
+<link href="{$tpl}/static/css/qirebox.css" type="text/css" rel="stylesheet" />
+<script language="javascript">var Root='{$root}';var Sid='{$sid}';var Cid='{$list_id}';<if condition="$sid eq 1">var Id='{$vod_id}';<else />var Id='{$news_id}';</if></script>
+<script src="{$tpl}/static/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="{$tpl}/static/js/jquery.base.js" type="text/javascript"></script>
+<script src="{$tpl}/static/js/playclass.js" type="text/javascript"></script>
+<link href="/favicon.ico" type="image/x-icon" rel="icon">
+<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+</head>
+<body>
+<include file="Home:pp_header" />
+<div id="content" class="layout">
+  <div class="ui-sponsor">
+    <!-- 广告位：list01-960 -->
+    <script type="text/javascript" src="/bd/tulist960_01.js"></script>
+  </div>
+  <!-- // ui-sponsor end -->
+  <div class="bread-crumb-nav fn-clear">
+    <ul class="bread-crumbs">
+      <li class="home"><a href="/">首页</a></li>
+      <li> 图片模式</li>
+    </ul>
+    <!-- // bread-crumbs end -->
+  </div>
+  <!-- // bread-crumb-nav end -->
+  <div class="ui-box filter-focus">
+    <div class="ui-title">
+      <h3>图片模式索引</h3>
+      <span><a href="#"  class="conreset">重置条件</a></span>
+      <p class="conbread"></p>
+    </div>
+    <div class="ui-cnt">
+      <?php
+
+$s_area=array('大陆','香港','台湾','港台','欧美','日本','韩国','日韩','新加坡','泰国','印度','俄罗斯','其他');
+
+$s_language=array('国语','粤语','韩语','日语','英语','泰语','其他');
+
+$s_year=array('2012','2011','2010','2009','2008','2007','2006','2005','2004','2003','2002','2001','2000','1999');
+
+if($_GET[year]) $u_year="-year-".$_GET[year];else $u_year=NULL;if($_GET[area]) $u_area="-area-".$_GET[area];else $u_area=NULL;if($_GET[language]) $u_language="-language-".$_GET[language];else $u_order=NULL;if($_GET[order]) $u_order="-order-".$_GET[order];else $u_order=NULL;
+
+?>
+      <div class="filter-list fn-clear">
+        <h5>类型：</h5>
+        <ul>
+          <li><a class="current" href="#"   target="_blank">全部</a></li>
+          <php>$cidarrr=array(15,16,17,18,19);</php>
+          <volist name="cidarrr" id="ppcid">
+            <li><a title='{:getlistname($ppcid)}' href="{:getlistname($ppcid,'list_url')}">{:getlistname($ppcid)}</a></li>
+          </volist>
+          <php>$cidarrr=array(8,9,10,11,12,13,14,28);</php>
+          <volist name="cidarrr" id="ppcid">
+            <li><a title='{:getlistname($ppcid)}' href="{:getlistname($ppcid,'list_url')}">{:getlistname($ppcid)}</a></li>
+          </volist>
+        </ul>
+      </div>
+      <div class="filter-list fn-clear">
+        <h5>产地：</h5>
+        <ul>
+          <li><a rel="nofllow" class="current" href="#" data="year-0">全部</a></li>
+          <?php 
+
+            foreach($s_area as $aid=>$avalue){ if($_GET[area]==$avalue) $class=" class='active'";else $class=NULL;echo "<li $class><a href=".$root."index.php?s=vod-show-id-".$list_id.$u_year."-area-".urlencode($avalue).$u_language.$u_order.".html>".$avalue."</a></li>";} ?>
+        </ul>
+      </div>
+      <div class="filter-list fn-clear">
+        <h5>年代：</h5>
+        <ul>
+          <li><a rel="nofllow" class="current" href="#" data="year-0">全部</a></li>
+          <?php foreach($s_year as $yid=>$yvalue){ if($_GET[year]==$yvalue) $class=" class='active'";else $class=NULL;echo "<li $class><a href=".$root."index.php?s=vod-show-id-".$list_id."-year-".$yvalue.$u_area.$u_language.$u_order.".html>".$yvalue."</a></li>";} ?>
+        </ul>
+      </div>
+    </div>
+    <!-- // filter-item end -->
+  </div>
+  <!-- // filter-focus end -->
+  <!-- filter-focus end -->
+  <div class="ui-box ui-qire fn-clear" id="list-focus">
+    <div class="qire-box">
+      <div class="ui-bar fn-clear">
+        <ul class="view-mode">
+          <li id="view-list"><a rel="nofollow" class="current" href="#" data="t-2">图片模式</a></li>
+          <li id="view-letter"><a rel="nofollow" href="{:getlistname(15,'list_url')}" id="byletter">字母模式</a></li>
+        </ul>
+        <!-- view-mode end -->
+        <!-- view-filter end -->
+        <div class="ui-pages short-page fn-right"  id="aapagesx">
+          <label></label>
+        </div>
+      </div>
+      <!-- // ui-bar end -->
+      <ul class="show-list fn-clear" id="contents">
+       <php>$vod_list = ff_mysql_vod('cid:'.$list_id.';limit:8;page:true;order:vod_addtime desc,vod_id desc');$page = $vod_list[0]['page'];</php>
+      <neq name="vod_list.0.count" value="0"><volist name="vod_list" id="ppvod">
+          <li><a class="play-img" target="_blank" href="{$ppvod.vod_readurl}"><img src="{$ppvod.vod_picurl}" alt="{$ppvod.vod_name|msubstr=0,20}" />
+            <label class="score">{$ppvod.vod_gold}</label>
+            </a>
+            <div class="play-txt">
+              <h5><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></h5>
+              <p class="actor"><em>主演:</em>{$ppvod.vod_actor|ff_search_url}</p>
+              <p class="type fn-left"><em>类型：</em><a target="_blank" href="{$ppvod.list_url}" data="mcid-42"> {$ppvod.list_name} </a></p>
+              <p class="type"><em class="long">更新时间：</em>{$ppvod.vod_addtime|date='Y-m-d H:i:s',###}</p>
+              <p class="plot"><em>剧情：</em>{$ppvod.vod_content|msubstr=0,120}…</p>
+              <p class="state"><em>状态：</em><a target="_blank" href="{$ppvod.vod_playurl}" class="goplay">{$ppvod.vod_title}</a><cite>.</cite></p>
+              <p class="more-desc"><a class="more" target="_blank" href="{$ppvod.vod_readurl}">详细</a></p>
+            </div>
+          </li>
+       </volist>
+      </ul>
+      <!-- // show-list End -->
+      <div class="ui-bar list-page fn-clear">
+        <div class="ui-pages ui-page-big" id="aapages"> {$page} </div>
+      </div>
+       <else/>
+       	 <ul>该分类暂无数据！</ul>
+      </neq>   
+      <!-- // list-page End -->
+    </div>
+    <!-- // qire-box end -->
+    <div class="qire-bar">
+      <div class="ui-sponsor250">
+        <!-- 广告位：tulist02-250 -->
+        <script type="text/javascript" src="/bd/tulist_01.js"></script>
+      </div>
+      <!-- // ui-sponsor250 end -->
+      <div class="ui-ranking">
+        <h3>本周推荐榜</h3>
+        <ul class="ranking-list">
+          <php>$vod_new = ff_mysql_vod('day:10;limit:20,15:order:vod_id desc');</php>
+          <fflist name="vod_new" id="ppvod">
+            <li><span>{$ppvod.vod_gold}</span>
+              <lt name="i" value="4"><em class="stress">{$i}.</em>
+                <else/>
+                <lt name="i" value="4"><em class="stress">{$i}.</em>
+                  <else/>
+                  <em>{$i}.</em></lt>
+              </lt>
+              <a href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name|msubstr=0,20}">{$ppvod.vod_name|msubstr=0,20}</a></li>
+          </fflist>
+        </ul>
+        <!-- // ranking-list end -->
+      </div>
+      <!-- // ui-ranking end -->
+      <div class="ui-ranking">
+        <h3>按周点击排行榜</h3>
+        <ul class="ranking-list">
+          <php>$vod_new = ff_mysql_vod('day:10;limit:35,15:order:vod_id desc');</php>
+          <fflist name="vod_new" id="ppvod">
+            <li><span>{$ppvod.vod_hits} </span>
+              <lt name="i" value="4"><em class="stress">{$i}.</em>
+                <else/>
+                <lt name="i" value="4"><em class="stress">{$i}.</em>
+                  <else/>
+                  <em>{$i}.</em></lt>
+              </lt>
+              <a href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name|msubstr=0,20}">{$ppvod.vod_name|msubstr=0,20}</a></li>
+          </fflist>
+        </ul>
+        <!-- // ranking-list end -->
+      </div>
+      <!-- // ui-ranking end -->
+      <div class="ui-sponsor250">
+        <!-- 广告位：tulist03-250 -->
+        <script type="text/javascript" src="/bd/tulist_02.js"></script>
+      </div>
+      <!-- // ui-sponsor250 end -->
+    </div>
+  </div>
+  <!-- // ui-box#list-focus end -->
+  <div class="ui-sponsor">
+    <!-- 广告位：list01-960 -->
+    <script type="text/javascript" src="/bd/tulist960_02.js"></script>
+  </div>
+  <!-- // ui-sponsor end -->
+</div>
+<!-- // content end --><!--模板仿制、修改，QQ：182377860  模板支持网站：www.yayamov.com-->
+<!-- // footer start -->
+<include file="Home:pp_footer" />
+</body>
+</html>

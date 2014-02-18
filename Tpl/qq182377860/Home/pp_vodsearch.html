@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{$title}</title>
+<meta name="keywords" content="<notempty name="list_keywords">
+{$list_keywords}
+<else/>
+最新{$list_name},{$keywords}
+</notempty>
+">
+<meta name="description" content="最新{$list_name}包含的影片有<volist name='vod_list' id='ppvod'>{$ppvod.vod_name|msubstr=0,10},</volist>完全免费在线观看！">
+<!-- // wrap Start -->
+<!--模板仿制、修改，QQ：182377860  模板支持网站：www.yayamov.com-->
+<link href="{$tpl}/static/css/base.css" type="text/css" rel="stylesheet" />
+<link href="{$tpl}/static/css/qirebox.css" type="text/css" rel="stylesheet" />
+<script src="{$tpl}/static/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="{$tpl}/static/js/jquery.base.js" type="text/javascript"></script>
+<script src="{$tpl}/static/js/playclass.js" type="text/javascript"></script>
+<link href="/favicon.ico" type="image/x-icon" rel="icon">
+<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<!-- 请置于所有广告位代码之前 -->
+<base target="_blank"/>
+</head><body>
+<include file="Home:pp_header" />
+<div id="content" class="layout">
+  <div class="ui-sponsor">
+    <!-- 广告位：list01-960 -->
+    <script type="text/javascript" src="/bd/tulist960_01.js"></script>
+  </div>
+  <!-- // ui-sponsor end -->
+  <div class="bread-crumb-nav fn-clear">
+    <ul class="bread-crumbs">
+      <li class="home"><a href="/">首页</a></li>
+      <li> 搜索&nbsp;
+        <notempty name="search_wd">&nbsp;<span style="color:#b80a52">{$search_wd}</span>&nbsp;</notempty>
+        结果</li>
+    </ul>
+    <!-- // bread-crumbs end -->
+  </div>
+  <!-- // bread-crumb-nav end -->
+  <!-- filter-focus end -->
+  <div class="ui-box ui-qire fn-clear" id="list-focus">
+    <div class="qire-box">
+      <div class="ui-bar fn-clear">
+        <ul class="view-mode">
+          <li id="view-list"><a rel="nofollow" class="current" href="#" data="t-2">搜索结果</a></li>
+        </ul>
+        <!-- view-mode end -->
+        <!-- view-filter end -->
+        <div class="ui-pages short-page fn-right"  id="aapagesx">
+          <label></label>
+        </div>
+      </div>
+      <!-- // ui-bar end -->
+      <ul class="show-list fn-clear" id="contents">
+        <php>$vod_list = ff_mysql_vod('wd:'.$search_wd.';actor:'.$search_actor.';year:'.$search_year.';language:'.$search_language.';area:'.$search_area.';letter:'.$search_letter.';limit:8;page:true;order:vod_addtime desc');$page = $vod_list[0]['page'];</php>
+        <volist name="vod_list" id="ppvod">
+          <li><a class="play-img" target="_blank" href="{$ppvod.vod_readurl}"><img src="{$ppvod.vod_picurl}" alt="{$ppvod.vod_name|msubstr=0,20}" />
+            <label class="score">{$ppvod.vod_gold}</label>
+            </a>
+            <div class="play-txt">
+              <h5><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></h5>
+              <p class="actor"><em>主演:</em>{$ppvod.vod_actor|ff_search_url}</p>
+              <p class="type fn-left"><em>类型：</em><a target="_blank" href="{$ppvod.list_url}" data="mcid-42"> {$ppvod.list_name} </a></p>
+              <p class="type"><em class="long">更新时间：</em>{$ppvod.vod_addtime|date='Y-m-d H:i:s',###}</p>
+              <p class="plot"><em>剧情：</em>{$ppvod.vod_content|msubstr=0,120}…</p>
+              <p class="state"><em>状态：</em><a target="_blank" href="{$ppvod.vod_playurl}" class="goplay">{$ppvod.vod_title}</a><cite>.</cite></p>
+              <p class="more-desc"><a class="more" target="_blank" href="{$ppvod.vod_readurl}">详细</a></p>
+            </div>
+          </li>
+        </volist>
+      </ul>
+      <!-- // show-list End -->
+      <div class="ui-bar list-page fn-clear">
+        <div class="ui-pages ui-page-big" id="aapages"> {$page} </div>
+      </div>
+      <!-- // list-page End -->
+    </div>
+    <!-- // qire-box end -->
+    <div class="qire-bar">
+      <div class="ui-sponsor250">
+        <!-- 广告位：tulist02-250 -->
+        <script type="text/javascript" src="/bd/tulist_01.js"></script>
+      </div>
+      <!-- // ui-sponsor250 end -->
+      <div class="ui-ranking">
+        <h3>本周推荐榜</h3>
+        <ul class="ranking-list">
+          <php>$vod_new = ff_mysql_vod('day:10;limit:20,15:order:vod_id desc');</php>
+          <fflist name="vod_new" id="ppvod">
+            <li><span>{$ppvod.vod_gold}</span>
+              <lt name="i" value="4"><em class="stress">{$i}.</em>
+                <else/>
+                <lt name="i" value="4"><em class="stress">{$i}.</em>
+                  <else/>
+                  <em>{$i}.</em></lt>
+              </lt>
+              <a href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name|msubstr=0,20}">{$ppvod.vod_name|msubstr=0,20}</a></li>
+          </fflist>
+        </ul>
+        <!-- // ranking-list end -->
+      </div>
+      <!-- // ui-ranking end -->
+      <div class="ui-ranking">
+        <h3>按周点击排行榜</h3>
+        <ul class="ranking-list">
+          <php>$vod_new = ff_mysql_vod('day:10;limit:35,15:order:vod_id desc');</php>
+          <fflist name="vod_new" id="ppvod">
+            <li><span>{$ppvod.vod_hits} </span>
+              <lt name="i" value="4"><em class="stress">{$i}.</em>
+                <else/>
+                <lt name="i" value="4"><em class="stress">{$i}.</em>
+                  <else/>
+                  <em>{$i}.</em></lt>
+              </lt>
+              <a href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name|msubstr=0,20}">{$ppvod.vod_name|msubstr=0,20}</a></li>
+          </fflist>
+        </ul>
+        <!-- // ranking-list end -->
+      </div>
+      <!-- // ui-ranking end -->
+      <div class="ui-sponsor250">
+        <!-- 广告位：tulist03-250 -->
+        <script type="text/javascript" src="/bd/tulist_02.js"></script>
+      </div>
+      <!-- // ui-sponsor250 end -->
+    </div>
+  </div>
+  <!-- // ui-box#list-focus end -->
+  <div class="ui-sponsor">
+    <!-- 广告位：list01-960 -->
+    <script type="text/javascript" src="/bd/tulist960_02.js"></script>
+  </div>
+  <!-- // ui-sponsor end --><!--模板仿制、修改，QQ：182377860  模板支持网站：www.yayamov.com-->
+
+</div>
+<!-- // content end -->
+<!-- // footer start -->
+<include file="Home:pp_footer" />
+</body>
+</html>

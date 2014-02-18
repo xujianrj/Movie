@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>百度影音《{$vod_name}》在线观看-{$vod_name}剧情介绍-{$sitename}-最新最快的百度影音电影网！</title>
+<meta name="keywords" content="{$vod_name}全集在线,{$vod_name}百度影音,{$vod_name}剧情介绍,{$vod_name}高清影片">
+<meta name="description" content="{$vod_name}剧情:{$vod_content|h|msubstr=0,80}">
+<link href="{$tpl}/static/css/base.css" type="text/css" rel="stylesheet" />
+<script language="javascript">var Root='{$root}';var Sid='{$sid}';var Cid='{$list_id}';<if condition="$sid eq 1">var Id='{$vod_id}';<else />var Id='{$news_id}';</if></script>
+<link href="{$tpl}/static/css/qirebox.css?v2013018" type="text/css" rel="stylesheet" />
+<script src="{$tpl}/static/js/jquery-1.7.1.min.js" type="text/javascript"> </script>
+<script src="{$tpl}/static/js/jquery.base.js" type="text/javascript"></script>
+<script src="{$tpl}/static/js/playclass.js" type="text/javascript"></script>
+<script language="javascript" src="{$tpl}/static/yayamov/js/jquery.js" charset="utf-8"></script>
+<script language="javascript" src="{$tpl}/static/yayamov/js/jquery-autocomplete.js" charset="utf-8"></script>
+<link href="{$tpl}/static/yayamov/css/base.css" type="text/css" rel="stylesheet">
+<script language="javascript" src="{$tpl}/static/yayamov/js/home.js" charset="utf-8"></script>
+<!--ff.tpl.js-->
+<link href="/favicon.ico" type="image/x-icon" rel="icon">
+<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+</head>
+<body>
+<include file="Home:pp_header" />
+<div id="content" class="layout">
+  <div class="ui-sponsor">
+    <!-- 广告位：vod01 -->
+    <script type="text/javascript" src="/bd/drama_banner1.js"></script>
+  </div>
+  <!-- // ui-sponsor end -->
+  <div class="bread-crumb-nav fn-clear">
+    <ul class="bread-crumbs">
+      <li class="home"> <a href="/">首页</a></li>
+      <li><a href="{$root}">首页</a>〉<a href="{$list_url}">{$list_name}</a>〉<a href="{$vod_readurl}">{$vod_name}</a></li>
+    </ul>
+    <div class="bread-share fn-right">
+      <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><span class="bds_more">分享到：</span><a class="bds_qzone"></a><a class="bds_tsina"></a><a class="bds_tqq"></a><a class="bds_renren"></a><a class="bds_douban"></a><a class="bds_taobao"></a><a class="bds_ty"></a><a class="bds_tieba"></a><a class="bds_kaixin001"></a><a class="bds_copy"></a></div>
+      <script type="text/javascript" id="bdshare_js" data="type=tools&uid=0" ></script>
+      <script type="text/javascript" id="bdshell_js"></script>
+      <script type="text/javascript">				document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com{$tpl}/static/js/shell_v2.js?t=" + new Date().getHours();
+			</script>
+      <!-- Baidu Button END -->
+    </div>
+  </div>
+  <!-- // bread-crumb-nav end -->
+  <div class="ui-box" id="detail-box">
+    <div style="DISPLAY: block" id="rating-main" class="rating-box">
+      <div class="rating-total fn-clear">
+        <label style="width:<php>echo($ppvod['vod_gold']*10)</php>%;" id="total" class="rating-total-item"> </label>
+        <div class="pingfen-total"><strong id="pingfen">{$vod_gold}</strong><em id="pingfen2">{$vod_gold}</em></div>
+      </div>
+      <div class="rating-panle">
+        <div class="rating-bar">
+          <div style="width:{$vod_hits}%;" id="fenshu" class="rating-bar-item"> </div>
+        </div>
+        <ul class="rating-show">
+          <li><span title="力荐" class="starstop star5">力荐</span>
+            <div class="power">
+              <div class="power-item" id="pam"></div>
+            </div>
+            <em id="pa">5382人</em></li>
+          <li><span title="推荐" class="starstop star4">推荐</span>
+            <div class="power">
+              <div class="power-item" id="pbm"></div>
+            </div>
+            <em id="pb">797人</em></li>
+          <li><span title="还行" class="starstop star3">还行</span>
+            <div class="power">
+              <div class="power-item" id="pcm"></div>
+            </div>
+            <em id="pc">142人</em></li>
+          <li><span title="较差" class="starstop star2">较差</span>
+            <div class="power">
+              <div class="power-item" id="pdm"></div>
+            </div>
+            <em id="pd">70人</em></li>
+          <li><span title="很差" class="starstop star1">很差</span>
+            <div class="power">
+              <div class="power-item" id="pem"></div>
+            </div>
+            <em id="pe">193人</em></li>
+        </ul>
+      </div>
+    </div>
+    <!-- // rating-box End -->
+    <div class="rating-box" >
+      <div class="rating-kong-item"> </div>
+    </div>
+    <!-- // rating-box End -->
+    <div class="detail-title fn-clear">
+      <h2>{$vod_name}</h2>
+      <div class="detail-sect">
+        <div class="interest-sect user-bt"> <a class="sect-btn" href="javascript:void(0);" onclick="userFav('30');return false;" target=_blank>收藏</a>
+          <div class="sect-show"><a class="cancel" href="javascript:void(0)" onClick="sitefav(window.location.href,'[vodinfo:name]在线看');return false;" target=_blank>已收藏</a></div>
+        </div>
+        <!-- // interest_sect End -->
+        <div class="interest-rss user-bt"><a class="rss-btn sect-btn"  href="{$vod_rssurl}">订阅</a>
+          <div class="rss-show sect-show"><a class="cancel" href="javascript:void(0);" val="0" data="-" id="delbt">[vodinfo:hits]已订阅</a></div>
+        </div>
+      </div>
+      <!-- // detail-sect End -->
+    </div>
+    <!-- // detail-title End -->
+    <div class="detail-cols fn-clear">
+      <div class="detail-pic fn-left"><img width="225" height="300" src="{$vod_picurl}"  onerror="javascript:this.src='{$tpl}/static/images/yayamov.gif';"  alt="{$vod_name}" /></div>
+      <!-- // detail-pic End -->
+      <div class="detail-info fn-left">
+        <div id="detail-rating" class="fn-clear">
+          <div class="gold">
+            <div> <span class="Gold"></span> <span class="Goldnum"></span><span class="golder">[<span class="Golder"> 我也要给这影片打分</span>]</span> </div>
+          </div>
+        </div>
+        <!-- // detail-rating End -->
+        <div class="info fn-clear">
+          <dl>
+            <dt>主演：</dt>
+            <dd> {$vod_actor|ff_search_url}</dd>
+          </dl>
+          <dl>
+            <dt>状态：</dt>
+            <dd><span class="color" >
+              <in name="list_id" value="3,4,15,16,17,18,19,20,21,22">
+                <notempty name="vod_continu"> 连载至{$vod_continu}
+                  <eq name="list_pid" value="4">期
+                    <else/>
+                    集</eq>
+                  </p>
+                </notempty>
+                <else />
+                {$vod_title} </in>
+              </span></dd>
+          </dl>
+          <dl class="fn-left">
+            <dt>类型：</dt>
+            <dd><a href='  {$list_url} '  > {$list_name}</a> </dd>
+          </dl>
+          <dl class="fn-right">
+            <dt>地区：</dt>
+            <dd><span>{$vod_area}</span></dd>
+          </dl>
+          <dl class="fn-left">
+            <dt>语言：</dt>
+            <dd> <span> {$vod_language|default='未知'}</span></dd>
+          </dl>
+          <dl class="fn-right">
+            <dt>导演：</dt>
+            <dd> {$vod_director|ff_search_url}</dd>
+          </dl>
+          <dl class="fn-left">
+            <dt>时间：</dt>
+            <dd><span id="addtime">{$vod_addtime|date='Y-m-d h:m:s',###}</span></dd>
+          </dl>
+          <dl class="fn-right">
+            <dt>年份：</dt>
+            <dd><span>{$vod_year|default='未知'}</span></dd>
+          </dl>
+          <dl>
+            <dt>
+              <php>$count=M('cm')->where(array('cm_cid'=>$vod_id))->select();</php>
+              评论：</dt>
+            <dd id="link-cmt" >
+              <label>当前有<strong id="commnum">{:count($count)}</strong>条评论，</label>
+              <a href="#comment">我也要评论</a></dd>
+          </dl>
+          <dl class="juqing">
+            <dt>剧情：</dt>
+            <dd>{$vod_content|msubstr=0,50}…<a class="link detail-desc" href="#detail-intro">详细剧情</a> </dd>
+          </dl>
+        </div>
+        <!-- // info End -->
+      </div>
+      <!-- // detail-info End -->
+      <div class="detail-union fn-right">
+        <!-- 广告位：vod02-300 -->
+        <script type="text/javascript" src="/bd/drama_right_300.js"></script>
+      </div>
+      <!-- // detail-ad End -->
+    </div>
+    <!-- // detail-cols End -->
+  </div>
+  <!-- // ui-box#detail-box end -->
+  <div class="ui-sponsor">
+    <!-- 广告位：vod03 -->
+    <script type="text/javascript" >BAIDU_CLB_SLOT_ID = "425655";</script>
+  </div>
+  <!-- // ui-sponsor end -->
+  <div class="ui-box" id="detail-list"> <a name=""></a>
+    <volist name="vod_playlist" id="ppvod">
+      <div class="play-list-box" id="baiduhd-pl-list">
+        <div class="caption fn-clear">
+          <h4><a href="#"><img src="{$tpl}/static/images/playlogo/{$ppvod.playname}.gif" alt="" /></a></h4>
+          <div class="txt">. </div>
+        </div>
+        <div class="content">
+          <p class="play-list">
+            <php>$countji=count($ppvod['son'])-1;if($ppvod['son']>10){krsort($ppvod['son']);}</php>
+            <volist name="ppvod['son']" id="ppvodson" key="iii"><a target="_blank" href="{$ppvodson.playurl}">{$ppvodson.playname}
+              <eq name="iii" value="1"><span class="new">new</span></eq>
+              </a></volist>
+          </p>
+        </div>
+      </div>
+    </volist>
+  </div>
+  <!-- // ui-box end -->
+  <div class="ui-sponsor">
+    <!-- 广告位：vod04 -->
+    <script type="text/javascript" src="/bd/drama_banner2.js"></script>
+  </div>
+  <!-- // ui-sponsor end -->
+  <div class="ui-box" id="like-focus">
+    <div class="ui-title">
+      <h2>喜欢看“<strong>{$vod_name}</strong>”的人也喜欢：</h2>
+    </div>
+    <ul class="img-list fn-clear">
+      <php>$hot_up = ff_mysql_vod('cid:'.$list_id.';limit:7;order:vod_up desc,vod_addtime desc');</php>
+      <volist name="hot_up" id="ppvod">
+        <li><a class="play-img" target="_blank" href="{$ppvod.vod_readurl}"><img src="{$ppvod.vod_picurl}" onerror="javascript:this.src='{$tpl}/static/images/yayamov.gif';"  alt="{$ppvod.vod_name}" />
+          <label class="mask"></label>
+          <label class="text">{$ppvod.vod_title}</label>
+          <label class="score">{$ppvod.vod_gold}</label>
+          </a>
+          <h5><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name}</a></h5>
+        </li>
+      </volist>
+    </ul>
+    <!-- // img-list end -->
+    <ul class="txt-list">
+      <php>$hot_up1 = ff_mysql_vod('cid:'.$list_id.';limit:8,15;order:vod_up desc,vod_addtime desc');</php>
+      <volist name="hot_up1" id="ppvod">
+        <li><span>
+          <if condition="$i lt 10">0{$i}
+            <else />
+            {$i}</if>
+          .</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name}</a></li>
+      </volist>
+    </ul>
+    <!-- // txt-list End -->
+  </div>
+  <!-- // ui-box#like-focus end -->
+  <div class="ui-box" id="comment" >
+    <div class="ui-title">
+      <h3>网友评论</h3>
+    </div>
+    <div class="ui-cnt">
+      <div class="box">
+        <div id="Comment" class="maxBox">评论加载ING...</div>
+      </div>
+      <!-- UYAN COUNT END -->
+    </div>
+    <!-- // comment End -->
+  </div>
+  <!-- // ui-box end -->
+  <div class="ui-sponsor">
+    <!-- 广告位：vod05 -->
+    <script type="text/javascript" src="/bd/drama_banner3.js"></script>
+  </div>
+  <!-- // ui-sponsor end -->
+  <div class="ui-box ui-qire" id="star-collection">
+    <h3><span><a href="{$url_special}">所有专题</a></span> 明星合集专题</h3>
+    <ul class="txt-list fn-clear">
+      <php>$special_new = ff_mysql_special('limit:0,10;order:special_id desc');</php>
+      <fflist name="special_new" id="ppvod">
+        <li><a href="{$ppvod.special_readurl}" target="_blank">{$ppvod.special_name|msubstr=0,20}</a></li>
+      </fflist>
+    </ul>
+  </div>
+  <!-- // star-collection end -->
+</div>
+<!-- // wrap End -->
+<!-- // footer start -->
+<include file="Home:pp_footer" />
+<script type="text/javascript" src="{$tpl}/static/js/jquery.colorbox.js"></script>
+<div style="display:none">
+<div id="detail-intro">
+<div class="ui-dialog-cnt">
+  <div class="detail-desc-cnt"> {$vod_content}yayamov.com </div>
+</div>
+<script type="text/javascript"> 
+$(document).ready(function(){
+	$(".detail-desc").colorbox({
+		inline:true, 
+		opacity: 0.6,
+		width: "1000px"
+	});
+});
+</script>
+<script type="text/javascript" src="{$tpl}js/jquery.colorbox.js"></script>
+</body>
+</html>

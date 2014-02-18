@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>电视直播频道 - m1938网</title>
+<link href="{$tpl}/static/css/base.css" type="text/css" rel="stylesheet" />
+<link href="{$tpl}/static/css/qirebox.css" type="text/css" rel="stylesheet" />
+<script language="javascript">var Root='{$root}';var Sid='{$sid}';var Cid='{$list_id}';<if condition="$sid eq 1">var Id='{$vod_id}';<else />var Id='{$news_id}';</if></script>
+<script src="{$tpl}/static/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="{$tpl}/static/js/jquery.base.js" type="text/javascript"></script>
+<script src="{$tpl}/static/js/playclass.js" type="text/javascript"></script>
+<!--模板仿制、修改，QQ：182377860  模板支持网站：www.yayamov.com-->
+<link href="/favicon.ico" type="image/x-icon" rel="icon">
+<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<script src="http://www.qire123.com{$tpl}/static/js/ff84.home.js" type="text/javascript"></script>
+</head>
+<body>
+<include file="Home:pp_header" />
+<div id="channel-nav">
+<div class="layout">
+<ul class="channel-catalog fn-clear" id="live-channel-catalog">
+</div>
+</div>
+</div>
+<!-- // channel-nav end -->
+<div class="channel-focus" id="live-focus">
+  <div class="layout" id="sohu-sponsor">
+    <!-- 广告位：play-sogou -->
+    <script type="text/javascript" src="/bd/play-sogou.js"></script>
+  </div>
+  <!-- // layout end -->
+  <div id="live-play" class="layout fn-clear">
+    <div id="feng-yun-mini-wrap"> <a id="loading-info" href="http://www.fengyunzhibo.com" target="_blank">正在加载【风云TV】播放器，请稍候...</a> </div>
+    <script type="text/javascript">window.fengyunminicongf={tuiguangid:"m1938",width:1000,height:530}</script>
+    <script type="text/javascript" src="http://static.m1lxcdn.kukuplay.com/support/mini/fyminiloader-min.js"></script>
+  </div>
+</div>
+<!-- // live-play end -->
+</div>
+<!-- // channel-focus end -->
+<!--模板仿制、修改，QQ：182377860  模板支持网站：www.yayamov.com-->
+<include file="Home:pp_footer" />
+<!-- Baidu Button END -->
+</body>
+</html>

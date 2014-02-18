@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>2013最新{$list_name}-{$list_name}推荐-{$list_name}大全-{$list_name}排行榜-{$list_name}下载-{$page}-{$title}</title>
+<meta name="keywords" content="2013最新{$list_name},{$list_name}推荐,{$list_name}大全,{$list_name}排行榜,{$list_title}，{$list_name}下载">
+<meta name="description" content="{$title}为观众收集整理2013最新{$list_name},{$list_name}推荐,{$list_name}大全,{$list_name}排行榜,{$list_name}下载与{$list_title}在线观看！">
+<!--模板仿制、修改，QQ：182377860  模板支持网站：www.yayamov.com-->
+<link href="{$tpl}/static/css/base.css" type="text/css" rel="stylesheet" />
+<link href="{$tpl}/static/css/qirebox.css" type="text/css" rel="stylesheet" />
+<script language="javascript">var Root='{$root}';var Sid='{$sid}';var Cid='{$list_id}';<if condition="$sid eq 1">var Id='{$vod_id}';<else />var Id='{$news_id}';</if></script>
+<script src="{$tpl}/static/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="{$tpl}/static/js/jquery.base.js" type="text/javascript"></script>
+<script src="{$tpl}/static/js/playclass.js" type="text/javascript"></script>
+<link href="/favicon.ico" type="image/x-icon" rel="icon">
+<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<!-- 请置于所有广告位代码之前 -->
+<base target="_blank"/>
+</head>
+<body>
+<include file="Home:pp_header" />
+<div id="content" class="layout">
+<div class="ui-sponsor">
+  <!-- 广告位：list01-960 -->
+  <script type="text/javascript" src="/bd/list960_01.js"></script>
+</div>
+<!-- // ui-sponsor end -->
+<div class="bread-crumb-nav fn-clear">
+  <ul class="bread-crumbs">
+    <li class="home"> <a href="{$root}">首页</a>〉<a href="{:getlistname('$list_id','list_url')}">{$list_name}</a></li>
+  </ul>
+  <!-- // bread-crumbs end -->
+</div>
+<!-- // bread-crumb-nav end -->
+<div class="ui-box" id="letter-query">
+  <div class="ui-bar fn-clear">
+    <ul class="view-mode">
+      <li id="view-list"><a rel="nofollow" href="{:ff_mytpl_url('my_hotm1938')}" data="t-2"  rel="nofollow" target="_self"  class="listv">图片模式</a></li>
+      <li id="view-letter"><a rel="nofollow" class="current" href="#"  rel="nofollow" target="_self"  id="byletter">字母模式</a></li>
+    </ul>
+    <!-- view-mode end -->
+    <!-- view-filter end -->
+  </div>
+  <!-- // ui-bar end -->
+  <div class="letter">
+    <ul>
+      <li><a target="_self" href="#a">A</a></li>
+      <li><a target="_self" href="#b">B</a></li>
+      <li><a target="_self" href="#c">C</a></li>
+      <li><a target="_self" href="#d">D</a></li>
+      <li><a target="_self" href="#e">E</a></li>
+      <li><a target="_self" href="#f">F</a></li>
+      <li><a target="_self" href="#g">G</a></li>
+      <li><a target="_self" href="#h">H</a></li>
+      <li><a target="_self" href="#i">I</a></li>
+      <li><a target="_self" href="#j">J</a></li>
+      <li><a target="_self" href="#k">K</a></li>
+      <li><a target="_self" href="#l">L</a></li>
+      <li><a target="_self" href="#m">M</a></li>
+      <li><a target="_self" href="#n">N</a></li>
+      <li><a target="_self" href="#o">O</a></li>
+      <li><a target="_self" href="#p">P</a></li>
+      <li><a target="_self" href="#q">Q</a></li>
+      <li><a target="_self" href="#r">R</a></li>
+      <li><a target="_self" href="#s">S</a></li>
+      <li><a target="_self" href="#t">T</a></li>
+      <li><a target="_self" href="#u">U</a></li>
+      <li><a target="_self" href="#v">V</a></li>
+      <li><a target="_self" href="#w">W</a></li>
+      <li><a target="_self" href="#x">X</a></li>
+      <li><a target="_self" href="#y">Y</a></li>
+      <li><a target="_self" href="#z">Z</a></li>
+      <li class="sz"><a target="_self"  href="#其它">其它</a></li>
+    </ul>
+  </div>
+  <!-- // letter End -->
+</div>
+<!-- letter-query end -->
+<div id="serial-box" class="layout">
+  <div class="ui-box" id="serial-box-lz">
+    <div class="ui-title fn-clear">
+      <h2>{$list_name}连载区更新 </h2>
+    </div>
+    <div class="ui-cnt serial-union fn-clear">
+      <ul class="txt-list">
+        <php>$vod_mov_top =ff_mysql_vod('cid:'.$list_id.';limit:16;order:vod_id desc');</php>
+        <fflist name="vod_mov_top" id="ppvod">
+          <li>
+            <h5 class="show-tipinfo"><a href="{$ppvod.vod_readurl}">{$ppvod.vod_name}</a>/<a href="{$ppvod.vod_readurl}">{$ppvod.vod_title}</a><em>{$ppvod.vod_addtime|date='m-d',###}</em>
+              <eq name="ppvod.vod_stars" value="5"><img alt="new" src="{$tpl}/static/images/new3.gif"></eq>
+            </h5>
+            <div class="tipInfo">
+              <div class="play-img"><img src="{$ppvod.vod_picurl}"  onerror="javascript:this.src='{$tpl}/static/images/m1938.gif';"  alt="{$ppvod.vod_name}"/></div>
+              <dl>
+                <dt>{$ppvod.vod_name}</dt>
+                <dd>
+                  <label>主演：</label>
+                  <span>{$ppvod.vod_actor|ff_search_url}</span></dd>
+                <dd class="jq">
+                  <label>剧情：</label>
+                  {$ppvod.vod_content|msubstr=0,20}…</dd>
+                <dd class="bg">
+                  <label>{$ppvod.vod_title}</label>
+                </dd>
+                <dd class="bg">
+                  <label>更新时间：</label>
+                  {$ppvod.vod_addtime|date='Y-m-d H:i:s',###}</dd>
+              </dl>
+            </div>
+          </li>
+        </fflist>
+      </ul>
+      <!-- // txt-list end -->
+      <div class="letter-union">
+        <!-- 广告位：list02-300 -->
+        <script type="text/javascript" src="/bd/list250_01.js"></script>
+      </div>
+      <!-- // letter-union end -->
+    </div>
+    <div class="ui-cnt">
+      <ul class="txt-list fn-clear">
+      </ul>
+      <!-- // txt-list end -->
+    </div>
+  </div>
+  <div class="ui-box" id="serial-box-wj">
+    <div class="ui-title fn-clear">
+      <h2>{$list_name}完结区人气 </h2>
+    </div>
+    <div class="ui-cnt serial-union fn-clear">
+      <!-- 这里调用除前面16条之外的连载的 -->
+      <ul class="txt-list">
+        <php>$vod_mov_top =ff_mysql_vod('cid:'.$list_id.';lz:2;limit:16;order:vod_hits desc');</php>
+        <fflist name="vod_mov_top" id="ppvod">
+          <li>
+            <h5 class="show-tipinfo"><a href="{$ppvod.vod_readurl}">{$ppvod.vod_name}</a>/<a href="{$ppvod.vod_readurl}">{$ppvod.vod_title}</a><em>{$ppvod.vod_addtime|date='m-d',###}</em>
+              <eq name="ppvod.vod_stars" value="5"><img alt="new" src="{$tpl}/static/images/new3.gif"></eq>
+            </h5>
+            <div class="tipInfo">
+              <div class="play-img"><img src="{$ppvod.vod_picurl}"  onerror="javascript:this.src='{$tpl}/static/images/m1938.gif';"  alt="{$ppvod.vod_name}"/></div>
+              <dl>
+                <dt>{$ppvod.vod_name}</dt>
+                <dd>
+                  <label>主演：</label>
+                  <span>{$ppvod.vod_actor|ff_search_url}</span></dd>
+                <dd class="jq">
+                  <label>剧情：</label>
+                  {$ppvod.vod_content|msubstr=0,20}…</dd>
+                <dd class="bg">
+                  <label>{$ppvod.vod_title}</label>
+                </dd>
+                <dd class="bg">
+                  <label>更新时间：</label>
+                  {$ppvod.vod_addtime|date='Y-m-d H:i:s',###}</dd>
+              </dl>
+            </div>
+          </li>
+        </fflist>
+      </ul>
+      <!-- // txt-list End -->
+      <div class="letter-union">
+        <!-- 广告位：list02-300 -->
+        <script type="text/javascript" src="/bd/list250_02.js"></script>
+      </div>
+      <!-- // detail-ad End -->
+    </div>
+  </div>
+</div>
+<!-- // ui-box end -->
+<div class="ui-box fn-clear" id="letter-focus">
+<div class="letter-ranking">
+  <div class="ui-ranking">
+    <h3>评分排行榜</h3>
+    <ul class="ranking-list">
+      <php>$vod_mov_top =ff_mysql_vod('cid:'.$list_id.';hits:20;limit:10;order:vod_hits desc');</php>
+      <fflist name="vod_mov_top" id="ppvod">
+        <li><span>{$ppvod.vod_gold}</span>
+          <lt name="i" value="4"><em class="stress">{$i}.</em>
+            <else/>
+            <lt name="i" value="4"><em class="stress">{$i}.</em>
+              <else/>
+              <em>{$i}.</em></lt>
+          </lt>
+          <a href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name}</a></li>
+      </fflist>
+    </ul>
+    <!-- // ranking-list end -->
+  </div>
+  <!-- // ui-ranking end -->
+  <div class="ui-ranking">
+    <h3>评论排行榜</h3>
+    <ul class="ranking-list">
+      <php>$vod_mov_top =ff_mysql_vod('cid:'.$list_id.';limit:4,10;order:vod_hits desc');</php>
+      <fflist name="vod_mov_top" id="ppvod">
+        <li><span>{$ppvod.vod_hits}</span>
+          <lt name="i" value="4"><em class="stress">{$i}.</em>
+            <else/>
+            <lt name="i" value="4"><em class="stress">{$i}.</em>
+              <else/>
+              <em>{$i}.</em></lt>
+          </lt>
+          <a href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name}</a></li>
+      </fflist>
+    </ul>
+    <!-- // ranking-list end -->
+  </div>
+  <!-- // ui-ranking end -->
+</div>
+<!-- // letter-ranking end -->
+<dl class="letter-focus-item" name="A" id="A">
+  <dt><a name="">A</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:a;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="a" name="a"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="B" id="B">
+  <dt><a name="">B</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:b;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="b" name="b"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="C" id="C">
+  <dt><a name="">C</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:c;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="c" name="c"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="D" id="D">
+  <dt><a name="">D</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:d;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="d" name="d"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="E" id="E">
+  <dt><a name="">E</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:e;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="e" name="e"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="F" id="F">
+  <dt><a name="">F</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:f;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="f" name="f"></dd>
+</dl>
+<dl >
+  <dl class="letter-focus-item" name="G" id="G">
+    <dt><a name="">G</a></dt>
+    <dd>
+      <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:g;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+      <fflist name="vod_num" id="ppvod">
+    <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+    </fflist>
+    <dd id="g" name="g"></dd>
+  </dl>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="H" id="H">
+  <dt><a name="">H</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:h;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="h" name="h"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="I" id="I">
+  <dt><a name="">I</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:i;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="i" name="i"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="J" id="J">
+  <dt><a name="">J</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:j;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="j" name="j"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="K" id="K">
+  <dt><a name="">K</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:k;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="k" name="k"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="L" id="L">
+  <dt><a name="">L</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:l;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="l" name="l"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="M" id="M">
+  <dt><a name="">M</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:m;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="m" name="m"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="N" id="N">
+  <dt><a name="">N</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:n;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="n" name="n"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="O" id="O">
+  <dt><a name="">O</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:o;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="o" name="o"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="P" id="P">
+  <dt><a name="">P</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:p;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="p" name="p"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="Q" id="Q">
+  <dt><a name="">Q</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:q;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="q" name="q"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="R" id="R">
+  <dt><a name="">R</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:r;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="r" name="r"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="S" id="S">
+  <dt><a name="">S</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:s;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="s" name="s"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="T" id="T">
+  <dt><a name="">T</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:t;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="t" name="t"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="U" id="U">
+  <dt><a name="">U</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:u;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="u" name="u"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="V" id="V">
+  <dt><a name="">V</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:v;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="v" name="v"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="W" id="W">
+  <dt><a name="">W</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:w;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="w" name="w"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="X" id="X">
+  <dt><a name="">X</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:x;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="x" name="xb"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="Y" id="Y">
+  <dt><a name="">Y</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:y;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="y" name="y"></dd>
+</dl>
+<dl >
+<dl class="letter-focus-item" name="Z" id="Z">
+  <dt><a name="">Z</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:z;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+  <dd id="z" name="z"></dd>
+</dl>
+<dl id="qt" name="qt" >
+<dl class="letter-focus-item" name="其它" id="其它">
+  <dt><a name="">其它</a></dt>
+  <dd>
+    <php>$vod_num = ff_mysql_vod('cid:'.$list_id.';letter:1,2,3,4,5,6,7,8,9;limit:200;order:vod_letter asc,vod_addtime desc');</php>
+    <fflist name="vod_num" id="ppvod">
+  <dd ><span>0{$i}.</span><a target="_blank" href="{$ppvod.vod_readurl}">{$ppvod.vod_name|msubstr=0,20}</a></dd>
+  </fflist>
+</dl>
+</section>
+</ul>
+</div><!--模板仿制、修改，QQ：182377860  模板支持网站：www.yayamov.com-->
+<!-- // star-collection end -->
+<div class="ui-box ui-qire" id="star-collection">
+  <h3><span><a href="{$url_special}">所有专题</a></span> 明星合集专题</h3>
+  <ul class="txt-list fn-clear">
+    <php>$special_new = ff_mysql_special('limit:0,16;order:special_id desc');</php>
+    <fflist name="special_new" id="ppvod">
+      <li><a href="{$ppvod.special_readurl}" target="_blank">{$ppvod.special_name|msubstr=0,20}</a></li>
+    </fflist>
+  </ul>
+</div>
+<!-- // star-collection end -->
+</div>
+<!-- // wrap End -->
+<!-- // footer start -->
+<!-- // wrap End -->
+<include file="Home:pp_footer" />
+</body>
+</html>

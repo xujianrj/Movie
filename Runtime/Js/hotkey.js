@@ -1,0 +1,1 @@
+document.write('<a href="/movie/?s=vod-search-wd-%E4%B8%BA%E4%BD%A0%E6%8F%90%E4%BE%9B%E6%9C%80%E5%A5%BD%E7%9C%8B%E7%9A%84%E7%94%B5%E5%BD%B1.html">为你提供最好看的电影</a>');

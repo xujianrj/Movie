@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>《 {$title}  》全部影视qvod快播在线观看-百度影音- 明星专题- {$sitename}</title>
+<meta name="keywords" content=" {$special_name}主演的电影、电视剧，《  {$special_name}  电影全集》高清电影在线观看 - 百度影音">
+<meta name="description" content=" {$sitename} 收集了 {$special_name}  演艺生涯主演的大部分电影和电视剧，提供《  {$special_name} 电影全集》高清电影在线观看 - 百度影音和 {$special_name}  的资料简介，如果你是 {$special_name}  粉丝，请转发给你的朋友一起来为偶像喝彩吧">
+<!--模板仿制、修改，QQ：182377860  模板支持网站：www.yayamov.com-->
+<link href="{$tpl}/static/css/base.css" type="text/css" rel="stylesheet" />
+<link href="{$tpl}/static/css/qirebox.css" type="text/css" rel="stylesheet" />
+<script language="javascript">var Root='{$root}';var Sid='{$sid}';var Cid='{$list_id}';<if condition="$sid eq 1">var Id='{$vod_id}';<else />var Id='{$news_id}';</if></script>
+<script src="{$tpl}/static/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="{$tpl}/static/js/jquery.base.js" type="text/javascript"></script>
+<script src="{$tpl}/static/js/playclass.js" type="text/javascript"></script>
+<link href="/favicon.ico" type="image/x-icon" rel="icon">
+<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+</head>
+<body>
+<include file="Home:pp_header" />
+<div id="content" class="layout">
+  <div class="bread-crumb-nav fn-clear">
+    <ul class="bread-crumbs">
+      <li class="home"><a href="/">首页</a></li>
+      <li><a href="/koushui.html">口水</a></li>
+    </ul>
+    <!-- // bread-crumbs end -->
+  </div>
+  <!-- // bread-crumb-nav end -->
+  <div id="water-fall" class="fn-clear">
+    <php>$vod_new = ff_mysql_vod('day:10;limit:4,20:order:vod_id desc');</php>
+    <fflist name="vod_new" id="ppvod">
+    <div id="water-fall" class="fn-clear">
+      <div class="ui-waterfall" data="50976">
+        <div class="fall-img">
+          <div class="fall-action"> </div>
+          <a target="_blank" width="160" height="215" href="{$ppvod.vod_readurl}"><img original="{$ppvod.vod_picurl}" src="{$ppvod.vod_picurl}" alt="" /></a>
+          <div class="fall-ing-txt">
+            <neq name="ppvod.vod_continu" value="0"><font color="red">连载至{$ppvod.vod_continu}集</font>
+              <else/>
+              完结</neq>
+          </div>
+          <div class="fall-ing-bg">&nbsp;</div>
+        </div>
+        <div class="fall-desc">
+          <p><a href="{$ppvod.vod_readurl}">{$ppvod.vod_name}</a></p>
+          <p>{$ppvod.vod_addtime|date='Y-m-d H:i:s',###}</p>
+        </div>
+        <div class="fall-comment">
+          <ul>
+            <li><a href="{$ppvod.vod_readurl}" target="_blank"><img src="{$tpl}/static/images/playlogo/noavatar_small.gif" alt=""/></a>
+              <p><a href="{$ppvod.vod_readurl}" target="_blank">{$ppvod.user_name|msubstr=0,20}</a>: <em> {$ppvod.vod_content|msubstr=0,25}... </em></p>
+            </li>
+          </ul>
+          <php>$count=M('cm')->where(array('cm_cid'=>$vod_id))->select();</php>
+          <div class="viewmore"><a target="_blank" href="{$ppvod.vod_readurl}">本周巳有{$ppvod.vod_hits} 人收藏本影片</a></div>
+        </div>
+      </div>
+      </fflist>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--模板仿制、修改，QQ：182377860  模板支持网站：www.yayamov.com-->
+<include file="Home:pp_footer" />
+</body>
+</html>
