@@ -4,7 +4,7 @@ return array (
   'db_host' => '127.0.0.1',
   'db_name' => 'feifeI',
   'db_user' => 'root',
-  'db_pwd' => 'Xu19850808',
+  'db_pwd' => '',
   'db_port' => '3306',
   'db_prefix' => 'ff_',
   'db_charset' => 'utf8',
